@@ -1,0 +1,61 @@
+{
+  "task": "diabetes",
+  "trained_at_utc": "2026-10-13T14:00:25+00:00",
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "threshold": 0.5,
+  "selected_model": "Extra Trees",
+  "selection_criterion": "mean cross-validated F1-score of the positive class (ties within 0.005 -> higher CV recall)",
+  "features": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "target": "Outcome",
+  "positive_meaning": "1 = diabetes onset within 5 years (dataset-defined, NOT a clinical diagnosis)",
+  "source_url": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database",
+  "n_records_used": 768,
+  "n_train": 614,
+  "n_test": 154,
+  "class_counts": {
+    "0": 500,
+    "1": 268
+  },
+  "cleaning_log": [
+    "Glucose: 5 zero values treated as missing (zero is physiologically impossible).",
+    "BloodPressure: 35 zero values treated as missing (zero is physiologically impossible).",
+    "SkinThickness: 227 zero values treated as missing (zero is physiologically impossible).",
+    "Insulin: 374 zero values treated as missing (zero is physiologically impossible).",
+    "BMI: 11 zero values treated as missing (zero is physiologically impossible).",
+    "Removed 0 exact duplicate rows.",
+    "No outlier removal and no resampling applied; missing values are imputed inside the cross-validated pipeline (train-only fit)."
+  ],
+  "model_params": {
+    "bootstrap": "False",
+    "ccp_alpha": "0.0",
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": "None",
+    "max_features": "sqrt",
+    "max_leaf_nodes": "None",
+    "max_samples": "None",
+    "min_impurity_decrease": "0.0",
+    "min_samples_leaf": "3",
+    "min_samples_split": "2",
+    "min_weight_fraction_leaf": "0.0",
+    "monotonic_cst": "None",
+    "n_estimators": "300",
+    "n_jobs": "1",
+    "oob_score": "False",
+    "random_state": "42",
+    "verbose": "0",
+    "warm_start": "False"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "task": "diabetes",
+    "trained_at_utc": "2026-10-13T14:00:25+00:00",
+    "sklearn_version": "1.9.1",
+    "seed": 42,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "threshold": 0.5,
+    "selected_model": "Extra Trees",
+    "selection_criterion": "mean cross-validated F1-score of the positive class (ties within 0.005 -> higher CV recall)",
+    "features": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age"
+    ],
+    "target": "Outcome",
+    "positive_meaning": "1 = diabetes onset within 5 years (dataset-defined, NOT a clinical diagnosis)",
+    "source_url": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database",
+    "n_records_used": 768,
+    "n_train": 614,
+    "n_test": 154,
+    "class_counts": {
+      "0": 500,
+      "1": 268
+    },
+    "cleaning_log": [
+      "Glucose: 5 zero values treated as missing (zero is physiologically impossible).",
+      "BloodPressure: 35 zero values treated as missing (zero is physiologically impossible).",
+      "SkinThickness: 227 zero values treated as missing (zero is physiologically impossible).",
+      "Insulin: 374 zero values treated as missing (zero is physiologically impossible).",
+      "BMI: 11 zero values treated as missing (zero is physiologically impossible).",
+      "Removed 0 exact duplicate rows.",
+      "No outlier removal and no resampling applied; missing values are imputed inside the cross-validated pipeline (train-only fit)."
+    ],
+    "model_params": {
+      "bootstrap": "False",
+      "ccp_alpha": "0.0",
+      "class_weight": "balanced_subsample",
+      "criterion": "gini",
+      "max_depth": "None",
+      "max_features": "sqrt",
+      "max_leaf_nodes": "None",
+      "max_samples": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "3",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "monotonic_cst": "None",
+      "n_estimators": "300",
+      "n_jobs": "1",
+      "oob_score": "False",
+      "random_state": "42",
+      "verbose": "0",
+      "warm_start": "False"
+    }
+  },
+  "candidates": [
+    {
+      "model": "Logistic Regression",
+      "cv_accuracy_mean": 0.7622017859522857,
+      "cv_precision_mean": 0.6486072261072261,
+      "cv_recall_mean": 0.7009966777408638,
+      "cv_f1_mean": 0.6723854281128022,
+      "cv_roc_auc_mean": 0.8443812292358803,
+      "cv_f1_std": 0.01331869395358905,
+      "test": {
+        "n": 154,
+        "support_positive": 54,
+        "support_negative": 100,
+        "tn": 75,
+        "fp": 25,
+        "fn": 16,
+        "tp": 38,
+        "accuracy": 0.7337662337662337,
+        "precision": 0.6031746031746031,
+        "recall": 0.7037037037037037,
+        "f1": 0.6495726495726495,
+        "specificity": 0.75,
+        "roc_auc": 0.8125925925925926,
+        "roc_auc_note": null,
+        "confusion_matrix": [
+          [
+            75,
+            25
+          ],
+          [
+            16,
+            38
+          ]
+        ]
+      },
+      "selected": false
+    },
+    {
+      "model": "Decision Tree",
+      "cv_accuracy_mean": 0.6904704784752765,
+      "cv_precision_mean": 0.5468569566960706,
+      "cv_recall_mean": 0.7197120708748617,
+      "cv_f1_mean": 0.618075770545879,
+      "cv_roc_auc_mean": 0.7703446843853821,
+      "cv_f1_std": 0.047753248267069066,
+      "test": {
+        "n": 154,
+        "support_positive": 54,
+        "support_negative": 100,
+        "tn": 64,
+        "fp": 36,
+        "fn": 8,
+        "tp": 46,
+        "accuracy": 0.7142857142857143,
+        "precision": 0.5609756097560976,
+        "recall": 0.8518518518518519,
+        "f1": 0.6764705882352942,
+        "specificity": 0.64,
+        "roc_auc": 0.7892592592592593,
+        "roc_auc_note": null,
+        "confusion_matrix": [
+          [
+            64,
+            36
+          ],
+          [
+            8,
+            46
+          ]
+        ]
+      },
+      "selected": false
+    },
+    {
+      "model": "Random Forest",
+      "cv_accuracy_mean": 0.783379981340797,
+      "cv_precision_mean": 0.6954035476718404,
+      "cv_recall_mean": 0.6821705426356589,
+      "cv_f1_mean": 0.6866764731445176,
+      "cv_roc_auc_mean": 0.831748338870432,
+      "cv_f1_std": 0.0156816721649462,
+      "test": {
+        "n": 154,
+        "support_positive": 54,
+        "support_negative": 100,
+        "tn": 81,
+        "fp": 19,
+        "fn": 18,
+        "tp": 36,
+        "accuracy": 0.7597402597402597,
+        "precision": 0.6545454545454545,
+        "recall": 0.6666666666666666,
+        "f1": 0.6605504587155963,
+        "specificity": 0.81,
+        "roc_auc": 0.8235185185185185,
+        "roc_auc_note": null,
+        "confusion_matrix": [
+          [
+            81,
+            19
+          ],
+          [
+            18,
+            36
+          ]
+        ]
+      },
+      "selected": false
+    },
+    {
+      "model": "Extra Trees",
+      "cv_accuracy_mean": 0.7703185392509664,
+      "cv_precision_mean": 0.6518886047172493,
+      "cv_recall_mean": 0.7383167220376523,
+      "cv_f1_mean": 0.6918215142097524,
+      "cv_roc_auc_mean": 0.8441971207087485,
+      "cv_f1_std": 0.021343969115495885,
+      "test": {
+        "n": 154,
+        "support_positive": 54,
+        "support_negative": 100,
+        "tn": 72,
+        "fp": 28,
+        "fn": 15,
+        "tp": 39,
+        "accuracy": 0.7207792207792207,
+        "precision": 0.582089552238806,
+        "recall": 0.7222222222222222,
+        "f1": 0.6446280991735538,
+        "specificity": 0.72,
+        "roc_auc": 0.8225925925925927,
+        "roc_auc_note": null,
+        "confusion_matrix": [
+          [
+            72,
+            28
+          ],
+          [
+            15,
+            39
+          ]
+        ]
+      },
+      "selected": true
+    },
+    {
+      "model": "Hist Gradient Boosting",
+      "cv_accuracy_mean": 0.7622151139544182,
+      "cv_precision_mean": 0.6900214987714988,
+      "cv_recall_mean": 0.5934662236987818,
+      "cv_f1_mean": 0.6358921131007985,
+      "cv_roc_auc_mean": 0.8226758028792911,
+      "cv_f1_std": 0.023019573290451505,
+      "test": {
+        "n": 154,
+        "support_positive": 54,
+        "support_negative": 100,
+        "tn": 85,
+        "fp": 15,
+        "fn": 22,
+        "tp": 32,
+        "accuracy": 0.7597402597402597,
+        "precision": 0.6808510638297872,
+        "recall": 0.5925925925925926,
+        "f1": 0.6336633663366336,
+        "specificity": 0.85,
+        "roc_auc": 0.8151851851851852,
+        "roc_auc_note": null,
+        "confusion_matrix": [
+          [
+            85,
+            15
+          ],
+          [
+            22,
+            32
+          ]
+        ]
+      },
+      "selected": false
+    }
+  ],
+  "final_test": {
+    "n": 154,
+    "support_positive": 54,
+    "support_negative": 100,
+    "tn": 72,
+    "fp": 28,
+    "fn": 15,
+    "tp": 39,
+    "accuracy": 0.7207792207792207,
+    "precision": 0.582089552238806,
+    "recall": 0.7222222222222222,
+    "f1": 0.6446280991735538,
+    "specificity": 0.72,
+    "roc_auc": 0.8225925925925927,
+    "roc_auc_note": null,
+    "confusion_matrix": [
+      [
+        72,
+        28
+      ],
+      [
+        15,
+        39
+      ]
+    ]
+  }
+}

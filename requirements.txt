@@ -1,0 +1,9 @@
+streamlit>=1.40,<2
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.3
+pytest>=8.0
+# Optional voice transcription (sends audio to Google's web speech service):
+# SpeechRecognition>=3.10

@@ -1,0 +1,2 @@
+# Limitations
+Small public datasets; narrow populations; dataset-defined labels; uncalibrated scores; no external validation; no clinical or regulatory approval; heart model needs clinical tests; FAQ mode is keyword matching; local SQLite has no authentication; the dialer link cannot confirm a call; voice and API features send data to third parties only after opt-in and were not tested in the build environment.

@@ -1,0 +1,57 @@
+{
+  "task": "heart_disease",
+  "trained_at_utc": "2026-10-13T14:35:06+00:00",
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "threshold": 0.5,
+  "selected_model": "Logistic Regression",
+  "selection_criterion": "mean cross-validated F1-score of the positive class (ties within 0.005 -> higher CV recall)",
+  "features": [
+    "age",
+    "sex",
+    "trestbps",
+    "chol",
+    "fbs",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "ca",
+    "cp",
+    "restecg",
+    "slope",
+    "thal"
+  ],
+  "target": "num",
+  "positive_meaning": "num 1-4 collapsed to 1 = angiographic narrowing present; 0 = absent (dataset-defined, NOT a clinical diagnosis)",
+  "source_url": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+  "n_records_used": 303,
+  "n_train": 242,
+  "n_test": 61,
+  "class_counts": {
+    "0": 164,
+    "1": 139
+  },
+  "cleaning_log": [
+    "Removed 0 exact duplicate rows.",
+    "Target collapsed to binary: original labels 1-4 (139 rows) -> 1; 0 stays 0.",
+    "No outlier removal and no resampling applied; missing values are imputed inside the cross-validated pipeline (train-only fit)."
+  ],
+  "model_params": {
+    "C": "1.0",
+    "class_weight": "balanced",
+    "dual": "False",
+    "fit_intercept": "True",
+    "intercept_scaling": "1",
+    "l1_ratio": "0.0",
+    "max_iter": "2000",
+    "n_jobs": "None",
+    "penalty": "deprecated",
+    "random_state": "42",
+    "solver": "lbfgs",
+    "tol": "0.0001",
+    "verbose": "0",
+    "warm_start": "False"
+  }
+}
